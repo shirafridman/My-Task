@@ -1,0 +1,26 @@
+
+
+ <div class="container">
+    <div style="text-align:center">
+      <h2>My Details</h2>
+    </div>
+    <div class="row">
+      <div class="column">
+        <img src="{{spesificContact.image}}" style="width:100%">
+      </div>
+      <div class="column">
+        <form action="/action_page.php">
+          <h2 >First Name</h2>
+          {{spesificContact.first_name}}<br>
+          <h2>Last Name</h2>
+          {{spesificContact.last_name}}<br>
+          <h2>Email</h2>
+          {{spesificContact.email}}<br>
+          <h2 >Description</h2>
+          {{spesificContact.description}}
+          <br>
+          <button class="button" (click)="back()">Back to Contacts</button>
+        </form>
+      </div>
+    </div>
+  </div>

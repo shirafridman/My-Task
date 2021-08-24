@@ -1,0 +1,27 @@
+<form  [formGroup]="login" action="action_page.php" method="post">
+    <div class="imgcontainer">
+      <img src="assets/img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+  
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" formControlName="name" placeholder="Enter Username" name="uname" required>
+      <div class="alert alert-danger" style="border: none;color: red;background-color:white;text-align: right;"
+      *ngIf="login.controls['name'].errors?.required">
+      *Required field</div>
+      <label for="psw"><b>Email</b></label>
+      <input type="password" formControlName="email" placeholder="Enter Email" name="psw" required>
+      <div class="alert alert-danger"
+      style="font-size: 15px; border: none;color: red;background-color:white;text-align: right;"
+      *ngIf="login.controls['email'].errors?.required">
+      *Required field</div>
+<div class="alert alert-danger"
+      style="font-size: 15px; border: none;color: red;background-color:white;text-align: right;"
+      *ngIf="login.controls['email'].errors?.email">
+      *Enter a valid email address</div>
+      <button [disabled]="!login.valid" (click)="loginApp()" type="submit">Login</button>
+      
+    </div>
+  </form>
+  
+  

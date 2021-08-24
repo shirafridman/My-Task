@@ -1,0 +1,20 @@
+
+<h1 class="h1">Our Contacts</h1>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class="input">
+<input class="w3-border w3-round-large"   [(ngModel)]="searchText" style="text-align: center;" type="text" placeholder="Search Here..." name="search">
+</div>
+<div *ngIf="load" style="text-align: center;margin-top: 20vh;">
+<img   src="assets/Spinner-5.gif"></div>
+<div  *ngIf="!load" class="row">
+    <div *ngFor="let man of listContacts | search:searchText | paginate: { itemsPerPage: 10, currentPage: p } " class="column">
+      <div class="card" title="Click on me" (click)="showContactInformation(man)">
+        <img src={{man.image}} class="img">
+        <h3>{{man.first_name}}</h3>
+        <p>{{man.last_name}}</p>
+        <p >{{man.email}}</p>
+      </div>
+    </div>
+  </div>
+<pagination-controls style="text-align: center;" (pageChange)="p = $event"></pagination-controls>
+  
